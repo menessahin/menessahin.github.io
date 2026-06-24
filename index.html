@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0f12;
-    --bg2: #13161b;
-    --bg3: #1a1e26;
-    --accent: #4ade80;
+    --bg:      #0d0f12;
+    --bg2:     #13161b;
+    --bg3:     #1a1e26;
+    --accent:  #4ade80;
     --accent2: #22d3ee;
-    --text: #e8eaf0;
-    --muted: #6b7280;
-    --border: rgba(255,255,255,0.08);
-    --radius: 12px;
+    --text:    #e8eaf0;
+    --muted:   #6b7280;
+    --border:  rgba(255,255,255,0.08);
+    --radius:  12px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,13 +31,13 @@
     line-height: 1.7;
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(13,15,18,0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(13,15,18,0.88);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
     display: flex;
@@ -45,162 +45,44 @@
     justify-content: space-between;
     height: 60px;
   }
-
   .nav-logo {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--accent);
     text-decoration: none;
     letter-spacing: 0.05em;
   }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 13px;
     transition: color 0.2s;
-    letter-spacing: 0.03em;
   }
-
   .nav-links a:hover { color: var(--text); }
 
-  /* SECTIONS */
+  /* ── LAYOUT ── */
   section {
     max-width: 860px;
     margin: 0 auto;
     padding: 5rem 2rem;
   }
-
-  /* HERO */
-  #hero {
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(74,222,128,0.1);
-    border: 1px solid rgba(74,222,128,0.25);
-    color: var(--accent);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 99px;
-    margin-bottom: 2rem;
-    width: fit-content;
-  }
-
-  .badge-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .hero-name {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-role {
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: var(--muted);
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    color: var(--muted);
-    max-width: 540px;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
-
-  .hero-terminal {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.25rem 1.5rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    color: var(--muted);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-  }
-
-  .terminal-line { margin-bottom: 4px; }
-  .terminal-line:last-child { margin-bottom: 0; }
-  .t-green { color: var(--accent); }
-  .t-cyan { color: var(--accent2); }
-  .t-white { color: var(--text); }
-
-  .hero-btns {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #0d0f12;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: opacity 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-
-  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
-  .btn-outline {
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    transition: border-color 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-
-  .btn-outline:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
-
-  /* SECTION HEADERS */
+  /* ── SECTION LABELS ── */
   .section-tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
   }
-
   .section-title {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     font-weight: 700;
@@ -209,52 +91,140 @@
     line-height: 1.2;
   }
 
-  /* ABOUT — skills centered, single column */
-  .skills-stack {
+  /* ── HERO ── */
+  #hero {
+    min-height: 92vh;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74,222,128,0.08);
+    border: 1px solid rgba(74,222,128,0.22);
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 99px;
+    margin-bottom: 2rem;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50%      { opacity: 0.3; }
+  }
+  .hero-name {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .hero-role {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.85;
+  }
+  .hero-terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+  }
+  .terminal-line { margin-bottom: 4px; }
+  .terminal-line:last-child { margin-bottom: 0; }
+  .t-green { color: var(--accent); }
+  .t-cyan  { color: var(--accent2); }
+  .t-white { color: var(--text); }
 
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #0d0f12;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: opacity 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
   .skills-box {
     background: var(--bg2);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.5rem;
+    padding: 1.4rem 1.5rem;
   }
-
+  .skills-box.wide { grid-column: 1 / -1; }
   .skills-box h3 {
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
     margin-bottom: 1rem;
-    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
   }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
   .skill-tag {
     background: var(--bg3);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 5px 12px;
+    padding: 4px 11px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     color: var(--text);
   }
 
-  /* PROJECTS */
+  /* ── PROJECTS ── */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1.25rem;
   }
-
   .project-card {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -265,33 +235,11 @@
     flex-direction: column;
     gap: 0.75rem;
   }
-
-  .project-card:hover {
-    border-color: rgba(255,255,255,0.2);
-    transform: translateY(-3px);
-  }
-
-  .project-icon { font-size: 28px; line-height: 1; }
-
-  .project-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .project-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-    flex: 1;
-  }
-
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
+  .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+  .project-icon { font-size: 26px; line-height: 1; }
+  .project-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.75; flex: 1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .project-tag {
     background: rgba(74,222,128,0.08);
     color: var(--accent);
@@ -300,26 +248,21 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
   }
-
+  .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
   .project-link {
     color: var(--accent2);
-    font-size: 13px;
+    font-size: 12px;
     text-decoration: none;
     font-family: 'IBM Plex Mono', monospace;
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    transition: opacity 0.2s;
   }
+  .project-link:hover { opacity: 0.75; text-decoration: underline; }
 
-  .project-link:hover { text-decoration: underline; }
-
-  /* EDUCATION */
-  .edu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
+  /* ── EDUCATION ── */
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
   .edu-card {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -329,33 +272,18 @@
     gap: 1.25rem;
     align-items: flex-start;
   }
-
   .edu-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px; height: 9px;
     border-radius: 50%;
     background: var(--accent);
-    margin-top: 6px;
+    margin-top: 7px;
     flex-shrink: 0;
   }
+  .edu-title  { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .edu-sub    { font-size: 13px; color: var(--muted); }
+  .edu-date   { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-  .edu-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 3px;
-  }
-
-  .edu-sub { font-size: 13px; color: var(--muted); }
-
-  .edu-date {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  /* CONTACT */
+  /* ── CONTACT ── */
   .contact-box {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -363,23 +291,13 @@
     padding: 2.5rem;
     text-align: center;
   }
-
   .contact-box p {
     color: var(--muted);
-    margin-bottom: 2rem;
     font-size: 0.95rem;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 400px;
+    margin: 0 auto 2rem;
   }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
   .contact-link {
     display: inline-flex;
     align-items: center;
@@ -392,63 +310,49 @@
     font-size: 14px;
     transition: border-color 0.2s, background 0.2s;
   }
+  .contact-link:hover { border-color: rgba(255,255,255,0.25); background: var(--bg3); }
 
-  .contact-link:hover {
-    border-color: rgba(255,255,255,0.25);
-    background: var(--bg3);
-  }
-
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
     text-align: center;
     padding: 2rem;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
     font-family: 'IBM Plex Mono', monospace;
   }
 
-  /* DIVIDER */
-  .section-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    max-width: 860px;
-    margin: 0 auto;
+  /* ── ANIMATION ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 0.65s ease forwards;
   }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .delay-1 { animation-delay: 0.08s; }
+  .delay-2 { animation-delay: 0.18s; }
+  .delay-3 { animation-delay: 0.30s; }
+  .delay-4 { animation-delay: 0.44s; }
+  .delay-5 { animation-delay: 0.58s; }
 
-  /* RESPONSIVE */
+  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     nav { padding: 0 1rem; }
     .nav-links { gap: 1rem; }
     section { padding: 3.5rem 1.25rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skills-box.wide { grid-column: auto; }
     .contact-box { padding: 1.75rem 1.25rem; }
   }
-
-  /* ANIMATION */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.7s ease forwards;
-  }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.2s; }
-  .delay-3 { animation-delay: 0.35s; }
-  .delay-4 { animation-delay: 0.5s; }
-  .delay-5 { animation-delay: 0.65s; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">~/portfolio</a>
+  <a href="#hero" class="nav-logo">~/mes</a>
   <ul class="nav-links">
-    <li><a href="#about">Hakkımda</a></li>
+    <li><a href="#about">Yetenekler</a></li>
     <li><a href="#projects">Projeler</a></li>
     <li><a href="#education">Eğitim</a></li>
     <li><a href="#contact">İletişim</a></li>
@@ -462,20 +366,18 @@
     İş fırsatlarına açığım
   </div>
 
-  <h1 class="hero-name fade-in delay-2">
-    M.Enes<br>SAHIN
-  </h1>
-  <p class="hero-role fade-in delay-2">Data Scientist & Statistician</p>
+  <h1 class="hero-name fade-in delay-2">M.Enes<br>Şahin</h1>
+  <p class="hero-role fade-in delay-2">Data Scientist</p>
 
   <p class="hero-desc fade-in delay-3">
-    Hacettepe Üniversitesi İstatistik mezunuyum. Veriyi anlık sezgiden ziyade
-    istatistiksel titizlikle analiz ederim. Python, SPSS, Makine öğrenmesi ve Derin öğrenme ile
-    anlamlı, işlevsel çıktılar üretebiliyorum.
+    Hacettepe Üniversitesi İstatistik bölümü mezunuyum. Veriyi sezgiyle değil,
+    istatistiksel titizlikle analiz ederim. Python, makine öğrenmesi ve derin öğrenme ile
+    ölçülebilir, yorumlanabilir çıktılar üretirim.
   </p>
 
   <div class="hero-terminal fade-in delay-3">
     <div class="terminal-line"><span class="t-green">~</span> <span class="t-cyan">import</span> <span class="t-white">pandas as pd</span></div>
-    <div class="terminal-line"><span class="t-green">~</span> <span class="t-cyan">import</span> <span class="t-white">sklearn</span></div>
+    <div class="terminal-line"><span class="t-green">~</span> <span class="t-cyan">from</span> <span class="t-white">sklearn.ensemble import XGBClassifier</span></div>
     <div class="terminal-line"><span class="t-green">~</span> <span class="t-white">model.fit(X_train, y_train)</span></div>
     <div class="terminal-line"><span class="t-green">~</span> <span class="t-green">status:</span> <span class="t-white">'Ready for new challenges'</span></div>
   </div>
@@ -488,73 +390,72 @@
 
 <hr class="section-divider">
 
-<!-- ABOUT -->
+<!-- ABOUT / SKILLS -->
 <section id="about">
-  <p class="section-tag">01 — Hakkımda</p>
-  <h2 class="section-title">Yetenekler</h2>
+  <p class="section-tag">Yetenekler</p>
 
-  <div class="skills-stack">
+  <div class="skills-grid">
 
     <div class="skills-box">
       <h3>Programlama & Araçlar</h3>
       <div class="skill-tags">
         <span class="skill-tag">Python</span>
         <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Git</span>
         <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Google Sheets</span>
-      </div>
-    </div>
-
-    <div class="skills-box">
-      <h3>Kütüphaneler & Framework'ler</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">pandas</span>
-        <span class="skill-tag">NumPy</span>
-        <span class="skill-tag">scikit-learn</span>
-        <span class="skill-tag">TensorFlow</span>
-        <span class="skill-tag">matplotlib</span>
-        <span class="skill-tag">seaborn</span>
-        <span class="skill-tag">Jupyter</span>
-        <span class="skill-tag">Keras</span>
-        <span class="skill-tag">SciPy</span>
-        <span class="skill-tag">Statsmodels</span>
-        <span class="skill-tag">Plotly</span>
-        <span class="skill-tag">OpenCV</span>
-        <span class="skill-tag">XGBoost</span>
-        <span class="skill-tag">CatBoost</span>
-        <span class="skill-tag">CNN</span>
-        <span class="skill-tag">RNN / LSTM</span>
-      </div>
-    </div>
-
-    <div class="skills-box">
-      <h3>Makine & Derin Öğrenme</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Deep Learning</span>
-        <span class="skill-tag">Web Scraping</span>
-        <span class="skill-tag">Deployment</span>
-      </div>
-    </div>
-
-    <div class="skills-box">
-      <h3>İstatistik</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Regresyon</span>
-        <span class="skill-tag">Hipotez testi</span>
-        <span class="skill-tag">A/B Testing</span>
-        <span class="skill-tag">Zaman Serileri</span>
-        <span class="skill-tag">Anket</span>
-        <span class="skill-tag">Ölçek Geliştirme</span>
-      </div>
-    </div>
-
-    <div class="skills-box">
-      <h3>İstatistik Yazılımları</h3>
-      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
         <span class="skill-tag">SPSS</span>
         <span class="skill-tag">SAS</span>
         <span class="skill-tag">EViews</span>
+      </div>
+    </div>
+
+    <div class="skills-box">
+      <h3>Veri & Hesaplama Kütüphaneleri</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">SciPy</span>
+        <span class="skill-tag">Statsmodels</span>
+      </div>
+    </div>
+
+    <div class="skills-box">
+      <h3>Makine Öğrenmesi Algoritmaları</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">XGBoost</span>
+        <span class="skill-tag">LightGBM</span>
+        <span class="skill-tag">CatBoost</span>
+        <span class="skill-tag">scikit-learn</span>
+        <span class="skill-tag">K-Means</span>
+        <span class="skill-tag">DBSCAN</span>
+        <span class="skill-tag">Random Forest</span>
+        <span class="skill-tag">SHAP</span>
+      </div>
+    </div>
+
+    <div class="skills-box">
+      <h3>Derin Öğrenme & CV</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">Keras</span> 
+        <span class="skill-tag">OpenCV</span>
+        <span class="skill-tag">CNN</span>
+        <span class="skill-tag">Transfer Learning</span>
+      </div>
+    </div>
+
+    <div class="skills-box wide">
+      <h3>İstatistik & Görselleştirme</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Hipotez Testi</span>
+        <span class="skill-tag">Regresyon Analizi</span>
+        <span class="skill-tag">A/B Testing</span>
+        <span class="skill-tag">Zaman Serileri</span>
+        <span class="skill-tag">RFM Analizi</span>
+        <span class="skill-tag">matplotlib</span>
+        <span class="skill-tag">seaborn</span>
+        <span class="skill-tag">Plotly</span>
       </div>
     </div>
 
@@ -565,26 +466,42 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <p class="section-tag">02 — projeler</p>
-  <h2 class="section-title">Yaptığım çalışmalar</h2>
+  <p class="section-tag">Projeler</p>
 
   <div class="projects-grid">
+
     <div class="project-card">
       <div class="project-icon">🌿</div>
       <div class="project-title">Potato Disease Classification</div>
       <p class="project-desc">
-        Patates yapraklarındaki hastalıkları (Late Blight), %98+ doğrulukla tespit eden derin öğrenme projesi.
-        TensorFlow kullanılarak CNN mimarisi, Transfer Learning ve görüntü işleme teknikleri ile geliştirilmiştir.
+        Patates yapraklarındaki hastalıkları %97.65 doğrulukla tespit eden derin öğrenme projesi.
+        CNN, MobileNetV2, ResNet50 ve VGG16 karşılaştırılmış; production için MobileNetV2 seçilmiştir.
       </p>
       <div class="project-tags">
-        <span class="project-tag">Python</span>
         <span class="project-tag">TensorFlow</span>
-        <span class="project-tag">Deep Learning</span>
+        <span class="project-tag">Transfer Learning</span>
+        <span class="project-tag">Computer Vision</span>
       </div>
-      <a href="https://www.kaggle.com/code/menessahin/potato-disease-models-nb-ipynb" class="project-link" target="_blank">
-        Kaggle'da gör →
-      </a>
+      <div class="project-links">
+        <a href="https://menessahin.github.io/potato_disease_models_mes.html" class="project-link" target="_blank">Notebook →</a>
+      </div>
     </div>
+
+    <div class="project-card">
+      <div class="project-icon">📊</div>
+      <div class="project-title">Customer Segmentation</div>
+      <p class="project-desc">
+        UCI Online Retail II verisiyle RFM segmentasyonu, churn tahmini (SMOTE + XGBoost),
+        BG/NBD + Gamma-Gamma LTV modellemesi ve Prophet ile zaman serisi tahmini.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">scikit-learn</span>
+        <span class="project-tag">XGBoost</span>
+        <span class="project-tag">SHAP</span>
+        <span class="project-tag">Prophet</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -592,8 +509,8 @@
 
 <!-- EDUCATION -->
 <section id="education">
-  <p class="section-tag">03 — eğitim</p>
-  <h2 class="section-title">Eğitim</h2>
+  <p class="section-tag">Eğitim</p>
+  <h2 class="section-title">Akademik geçmiş</h2>
 
   <div class="edu-list">
     <div class="edu-card">
@@ -611,29 +528,28 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <p class="section-tag">04 — iletişim</p>
+  <p class="section-tag">İletişim</p>
   <h2 class="section-title">Benimle iletişime geç</h2>
 
   <div class="contact-box">
     <p>
-      Yeni fırsatlara ve iş birliklerine açığım. Bir proje fikrin varsa,
-      ya da sadece merhaba demek istiyorsan yazabilirsin.
+      Yeni fırsatlara açığım. Bir proje fikrin varsa ya da sadece merhaba demek istiyorsan yazabilirsin.
     </p>
     <div class="contact-links">
       <a href="https://linkedin.com/in/m-enes-şahin-68448b18b" class="contact-link" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <span class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:stat.enessahin@gmail.com" class="contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         stat.enessahin@gmail.com
-      </span>
+      </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 M.Enes Şahin — Data Scientist & Machine Learning Developer </p>
+  © 2026 M.Enes Şahin — Data Scientist
 </footer>
 
 </body>
