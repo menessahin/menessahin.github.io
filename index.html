@@ -31,7 +31,6 @@
     line-height: 1.7;
   }
 
-  /* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
@@ -61,7 +60,6 @@
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* ── LAYOUT ── */
   section {
     max-width: 860px;
     margin: 0 auto;
@@ -74,7 +72,6 @@
     margin: 0 auto;
   }
 
-  /* ── SECTION LABELS ── */
   .section-tag {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -91,7 +88,6 @@
     line-height: 1.2;
   }
 
-  /* ── HERO ── */
   #hero {
     min-height: 92vh;
     display: flex;
@@ -186,7 +182,6 @@
   }
   .btn-outline:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
 
-  /* ── SKILLS ── */
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -219,14 +214,12 @@
     color: var(--text);
   }
 
-  /* ── PROJECTS ── */
   .projects-list {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
 
-  /* Her kart: ikon+başlık solda, içerik sağda — yatay layout */
   .project-card {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -245,10 +238,7 @@
     align-items: center;
     padding-top: 3px;
   }
-  .project-icon {
-    font-size: 28px;
-    line-height: 1;
-  }
+  .project-icon { font-size: 28px; line-height: 1; }
 
   .project-right {
     display: flex;
@@ -277,7 +267,6 @@
     font-size: 11px;
   }
 
-  /* ── NOTEBOOK LINKS ── */
   .nb-label {
     font-size: 10px;
     font-family: 'IBM Plex Mono', monospace;
@@ -287,11 +276,7 @@
     display: block;
     margin-bottom: 4px;
   }
-  .nb-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+  .nb-links { display: flex; flex-direction: column; gap: 0; }
   .nb-link {
     color: var(--accent2);
     font-size: 12px;
@@ -307,7 +292,6 @@
   .nb-link:last-child { border-bottom: none; }
   .nb-link:hover { color: var(--accent); }
 
-  /* single notebook link (Potato) */
   .project-link {
     color: var(--accent2);
     font-size: 12px;
@@ -320,7 +304,37 @@
   }
   .project-link:hover { opacity: 0.75; text-decoration: underline; }
 
-  /* ── EDUCATION ── */
+  /* Live badge */
+  .project-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(74,222,128,0.08);
+    border: 1px solid rgba(74,222,128,0.2);
+    border-radius: 99px;
+    padding: 3px 10px;
+    width: fit-content;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .project-live:hover { background: rgba(74,222,128,0.15); }
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .project-links-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   .edu-list { display: flex; flex-direction: column; gap: 1rem; }
   .edu-card {
     background: var(--bg2);
@@ -342,7 +356,6 @@
   .edu-sub    { font-size: 13px; color: var(--muted); }
   .edu-date   { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-  /* ── CONTACT ── */
   .contact-box {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -371,7 +384,6 @@
   }
   .contact-link:hover { border-color: rgba(255,255,255,0.25); background: var(--bg3); }
 
-  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
     text-align: center;
@@ -381,7 +393,6 @@
     font-family: 'IBM Plex Mono', monospace;
   }
 
-  /* ── ANIMATION ── */
   .fade-in {
     opacity: 0;
     transform: translateY(18px);
@@ -394,7 +405,6 @@
   .delay-4 { animation-delay: 0.44s; }
   .delay-5 { animation-delay: 0.58s; }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     nav { padding: 0 1rem; }
     .nav-links { gap: 1rem; }
@@ -412,7 +422,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">~/mes</a>
   <ul class="nav-links">
@@ -423,7 +432,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-badge fade-in delay-1">
     <span class="badge-dot"></span>
@@ -454,7 +462,6 @@
 
 <hr class="section-divider">
 
-<!-- ABOUT / SKILLS -->
 <section id="about">
   <p class="section-tag">Yetenekler</p>
 
@@ -528,7 +535,6 @@
 
 <hr class="section-divider">
 
-<!-- PROJECTS -->
 <section id="projects">
   <p class="section-tag">Projeler</p>
 
@@ -586,12 +592,39 @@
       </div>
     </div>
 
+    <!-- Kahve App -->
+    <div class="project-card">
+      <div class="project-left">
+        <div class="project-icon">☕</div>
+      </div>
+      <div class="project-right">
+        <div class="project-title">PAYMENT INTEGRATION & REST API</div>
+        <p class="project-desc">
+          Flask backend ile uçtan uca ödeme akışı: iyzico sandbox entegrasyonu, RESTful endpoint'ler
+          ve Neon DB (serverless PostgreSQL) üzerinde 7/24 production deployment.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Flask</span>
+          <span class="project-tag">REST API</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">iyzico</span>
+          <span class="project-tag">Neon DB</span>
+        </div>
+        <div class="project-links-row">
+          <a href="https://web-production-d1d8c.up.railway.app/" class="project-live" target="_blank">
+            <span class="live-dot"></span>
+            Canlı Demo
+          </a>
+          <a href="https://github.com/menessahin/kahve-app" class="project-link" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <hr class="section-divider">
 
-<!-- EDUCATION -->
 <section id="education">
   <p class="section-tag">Eğitim</p>
   <h2 class="section-title">Akademik geçmiş</h2>
@@ -610,7 +643,6 @@
 
 <hr class="section-divider">
 
-<!-- CONTACT -->
 <section id="contact">
   <p class="section-tag">İletişim</p>
   <h2 class="section-title">Benimle iletişime geç</h2>
@@ -633,7 +665,7 @@
 </section>
 
 <footer>
-  © 2026 M.Enes Şahin — Data Scientist
+  © 2026 M.Enes Şahin — Data Scientist · Machine Learning & Computer Vision
 </footer>
 
 </body>
